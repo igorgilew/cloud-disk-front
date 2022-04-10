@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 5%
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: lighter;
+    color: darkslategray;
+    text-shadow: #FFFCA8 2px 2px 0, #9C9C9C 4px 4px 0;
+}
+
+span {
+    font-size: 32px;
+    font-weight: lighter;
+    font-style: normal;
+    color: darkslategray;
+}

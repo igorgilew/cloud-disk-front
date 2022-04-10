@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    gap: 10px;
+    background-color: darkslategray;
+    padding: 0 20px 20px 20px;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.email {
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.password {
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.btn {
+    height: 30px;
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: darkslategray;
+}
+
+.email:hover {
+    transform: scale(1.01);
+}
+
+.password:hover {
+    transform: scale(1.01);
+}
+
+.btn:hover {
+    transform: scale(1.01);
+}
+
+h3 {
+    color: whitesmoke;
+}
