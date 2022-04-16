@@ -1,28 +1,18 @@
 import React, {useState} from 'react';
 import Input from "../common/input/Input";
 import classes from "./registration.module.css";
-import {registration} from "../../actions/registration";
+import {register} from "../../actions/reg";
+import {useNavigate} from "react-router-dom";
 
 const Registration = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-    const reg = (email, password) => {
-        const userRegData = {
-            email,
-            password
-        }
-
-        registration(userRegData)
-            .then((response) => {
-                alert("успех");
-                setEmail("");
-                setPassword("")
-            })
-            .catch(error => {
-                alert(error)
-            });
+    const reg = () => {
+        register(email, password)
+            .then(()=>navigate("/login"))
     };
 
     return (

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./App.css"
 import Navbar from "./components/common/navbar/Navbar";
 import {useDispatch} from "react-redux";
-import {authByToken} from "./actions/login";
+import {authByToken} from "./actions/auth";
 import AppRouter from "./router/AppRouter";
 import Loader from "./components/common/loader/Loader";
 

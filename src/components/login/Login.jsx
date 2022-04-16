@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import classes from "./login.module.css";
 import Input from "../common/input/Input";
-import {authByEmailAndPassword} from "../../actions/login";
+import {authByEmailAndPassword} from "../../actions/auth";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
