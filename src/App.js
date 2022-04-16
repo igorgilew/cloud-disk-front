@@ -1,22 +1,31 @@
-import React from 'react';
-import Registration from "./components/registration/Registration";
+import React, {useEffect, useState} from 'react';
 import "./App.css"
 import Navbar from "./components/common/navbar/Navbar";
-import Login from "./components/login/Login";
-import {Route, Routes} from "react-router-dom";
-import Panel from "./components/panel/Panel";
-import NoPageFound from "./components/no-page-found/NoPageFound";
+import {useDispatch} from "react-redux";
+import {authByToken} from "./actions/login";
+import AppRouter from "./router/AppRouter";
+import Loader from "./components/common/loader/Loader";
 
 const App = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(authByToken())
+            .finally(() =>
+                setIsLoading(false)
+            )
+    }, [])
+
     return (
         <div className={"container"}>
             <Navbar/>
-            <Routes>
-                <Route path="/" element={<Panel/>} />
-                <Route path="login" element={<Login/>} />
-                <Route path="registration" element={<Registration/>} />
-                <Route path="*" element={<NoPageFound/>}/>
-            </Routes>
+            {isLoading ?
+                <Loader/>
+                :
+                <AppRouter/>
+            }
         </div>
     );
 };

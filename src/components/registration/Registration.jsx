@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
 import Input from "../common/input/Input";
 import classes from "./registration.module.css";
-import axios from "axios";
-import {backend_url} from "../../properties";
-import {registration} from "../../api/api";
+import {registration} from "../../actions/registration";
 
 const Registration = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const reg = () => {
+    const reg = (email, password) => {
         const userRegData = {
             email,
             password
